@@ -1,0 +1,26 @@
+<ion-content>
+
+  <ion-content>
+    <ion-card>
+      <ion-item id="item">
+        <ion-img src={{dados.imagem}} ></ion-img>
+      </ion-item>
+    </ion-card>
+      <ion-title>{{dados.titulo}}</ion-title>
+    
+      <ion-card>
+        <ion-card-content>
+          {{dados.descricao}}
+        </ion-card-content>
+      </ion-card>
+
+    <ion-item expand="full" size="small" class="botao">
+        <ion-label> CEP: {{dados.cep}}</ion-label>
+    </ion-item>
+
+    <ion-item expand="full" size="small" class="botao">
+      <ion-label>{{dados.contato}}</ion-label>
+    </ion-item>
+
+    <button (click)="close()" class="button" type="button">Retornar</button>
+  </ion-content>

@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card *ngFor="let dados of dados; index as i; first as isFirst">
+
+    <ion-item>
+      <ion-card-title id="titule">{{dados.titulo}}</ion-card-title>
+    </ion-item>
+
+    <ion-item id="item">
+      <ion-img src={{dados.imagem}}></ion-img>
+    </ion-item>
+
+    <ion-card-content>
+      {{dados.descricao}}
+    </ion-card-content>
+
+    <ion-item>
+      <ion-icon name="pin" slot="start"></ion-icon>
+        <ion-label class="cepi"> CEP: {{dados.cep}}</ion-label>
+    
+      <ion-button fill="outline" slot="end" (click)="chamarModal(dados.id)">Detalhes</ion-button>
+      
+    </ion-item>
+
+    <ion-item expand="full" size="small" class="botao">
+      <ion-label>{{dados.Local}}</ion-label>
+    </ion-item>
+
+    <ion-item expand="full" size="small" class="botao">
+      <ion-label>Telefone para contato: {{dados.contato}}</ion-label>
+    </ion-item>
+
+  </ion-card>
+
+</ion-content>

@@ -1,0 +1,97 @@
+<ion-content class="swiper-no-swiping">
+  <div class="container top" [hidden]="keyboard.isVisible">
+    <img src="/assets/img/logo.png" height="90">
+    <ion-segment (ionChange)="segmentChanged($event)" value="login">
+      <ion-segment-button value="login">
+        <ion-label>Login</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="register">
+        <ion-label>Cadastro</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+
+  <ion-slides>
+    <ion-slide>
+      <div class="slide-inner ion-padding">
+        <span>Login</span>
+
+        <ion-item class="ion-margin-top" liness="none">
+          <ion-input type="email" placeholder="Email" [(ngModel)]="userLogin.email"></ion-input>
+        </ion-item>
+
+        <ion-item class="ion-margin-top" liness="none">
+          <ion-input type="password" placeholder="Senha" [(ngModel)]="userLogin.password"></ion-input>
+        </ion-item>
+
+        <ion-button class="ion-margin-top" (click)="login()" color="light" expand="block">
+          Entrar
+        </ion-button>
+      </div>
+    </ion-slide>
+
+
+    <ion-slide>
+      <form [formGroup]="registrationForm">
+        <div class="slide-inner ion-padding">
+          <span>Cadastro</span>
+
+          <ion-item class="ion-margin-top" lines="none">
+            <ion-input class="entrada" formControlName="nome" type="text" placeholder="Nome"
+              [(ngModel)]="userRegister.nome"></ion-input>
+          </ion-item>
+          <div *ngFor="let error of errorMessages.nome">
+            <ng-container *ngIf="nome.hasError(error.type) && (nome.dirty || nome.touched)">
+              <small class="error-message">{{error.message}}</small>
+            </ng-container>
+          </div>
+
+          <ion-item class="ion-margin-top" lines="none">
+            <ion-input class="entrada" formControlName="telefone" type="telefone" placeholder="Telefone"
+              [(ngModel)]="userRegister.telefone"></ion-input>
+          </ion-item>
+          <div *ngFor="let error of errorMessages.telefone">
+            <ng-container *ngIf="telefone.hasError(error.type) && (telefone.dirty || telefone.touched)">
+              <small class="error-message">{{error.message}}</small>
+            </ng-container>
+          </div>
+
+          <ion-item class="ion-margin-top" lines="none">
+            <ion-input class="entrada" formControlName="email" type="email" placeholder="E-mail"
+              [(ngModel)]="userRegister.email"></ion-input>
+          </ion-item>
+          <div *ngFor="let error of errorMessages.email">
+            <ng-container *ngIf="email.hasError(error.type) && (email.dirty || email.touched)">
+              <small class="error-message">{{error.message}}</small>
+            </ng-container>
+          </div>
+
+          <ion-item class="ion-margin-top" lines="none">
+            <ion-input class="entrada" formControlName="password" type="password" placeholder="Senha"
+              [(ngModel)]="userRegister.password"></ion-input>
+          </ion-item>
+          <div *ngFor="let error of errorMessages.password">
+            <ng-container *ngIf="password.hasError(error.type) && (password.dirty || password.touched)">
+              <small class="error-message">{{error.message}}</small>
+            </ng-container>
+          </div>
+
+          <ion-button class="ion-margin-top" (click)="register()" color="light" expand="block"
+            [disabled]="!registrationForm.valid">
+            Cadastrar
+          </ion-button>
+        </div>
+      </form>
+    </ion-slide>
+  </ion-slides>
+
+
+
+  <div class="Pets">
+    <div class="Teste"></div>
+
+    <div class="container bottom ion-text-center" [hidden]="keyboard.isVisible">
+      <span>Você está há poucos passos de salvar a vida de um animal...</span>
+    </div>
+  </div>
+</ion-content>

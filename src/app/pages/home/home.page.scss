@@ -1,0 +1,66 @@
+ion-img {
+    width: 360;
+}
+
+.cepi {
+    color: black;
+    
+
+}
+
+ion-card-content{
+    color: rgb(26, 4, 4);
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    width: 100%;
+    
+    
+   
+
+}
+
+.teste {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    background: #30b5be;
+
+}
+
+ion-content{
+    --ion-background-color:#f0f0f0;
+
+}
+ion-content.contatos{
+    --ion-background-color:#30b5be;
+}
+
+ion-button.botao {
+    --color: rgb(61, 184, 98);
+    
+}
+
+ion-card-content{
+    --color: #76777993;
+}
+
+ion-card-title{
+
+    size: -100px;
+    
+}
+
+ion-button.butao{
+    position: center;
+}
+
+
+
+#item{
+    
+    max-width: 400px;
+    max-height: 300px
+    
+}
+

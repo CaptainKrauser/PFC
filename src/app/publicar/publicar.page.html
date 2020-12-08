@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div>
+    <ion-card>
+      <ion-item>
+        <ion-label class="teste"> Imagem</ion-label>
+        <ion-input type="file" class="form-control-file" [(ngModel)]="imagem" accept=".jpg, .jpeg, .png" id="imagem"></ion-input>
+      </ion-item>
+        <ion-item>
+          <ion-label class="teste" >Titulo</ion-label>
+            <ion-input type="text" [(ngModel)]="titulo"  placeholder="Digite aqui o título"></ion-input>
+        </ion-item>
+      <ion-item>
+        <ion-label class="teste" >Descrição</ion-label>
+            <ion-textarea type="text" [(ngModel)]="descricao" placeholder="Digite aqui a descrição da sua publicação..."></ion-textarea>
+          </ion-item>
+      <ion-item>
+        <ion-label class="teste" >CEP</ion-label>
+          <ion-input type="number" [(ngModel)]="cep"  placeholder="Digite aqui o CEP"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label class="teste" >Contato</ion-label>
+        <ion-input type="number" [(ngModel)]="contato"  placeholder="Digite aqui um contato"></ion-input>
+      </ion-item>
+
+      <ion-button (click)="publicar()">Publicar</ion-button>
+    </ion-card>
+  </div>
+</ion-content>
